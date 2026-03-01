@@ -1,0 +1,8 @@
+
+CREATE TABLE revenue (id SERIAL PRIMARY KEY, amount NUMERIC);
+CREATE TABLE expenses (id SERIAL PRIMARY KEY, amount NUMERIC);
+CREATE TABLE salaries (id SERIAL PRIMARY KEY, amount NUMERIC);
+
+INSERT INTO revenue (amount) VALUES (10000);
+INSERT INTO expenses (amount) VALUES (4000);
+INSERT INTO salaries (amount) VALUES (2000);
