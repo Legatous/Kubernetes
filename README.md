@@ -1,1 +1,1 @@
-# Learning some devops and kubernettes
+# Learning some devops and kubernetes
