@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SMB Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="font-family: Arial; padding:20px;">
+  <h1>Business Dashboard</h1>
+  <canvas id="chart" width="400" height="200"></canvas>
+
+<script>
+async function loadData() {
+  const res = await fetch('http://localhost:3001/api/profit-loss');
+  const data = await res.json();
+
+  new Chart(document.getElementById('chart'), {
+    type: 'bar',
+    data: {
+      labels: ['Revenue', 'Expenses', 'Profit'],
+      datasets: [{
+        label: 'Amount',
+        data: [data.totalRevenue, data.totalExpenses, data.profit]
+      }]
+    }
+  });
+}
+
+loadData();
+</script>
+</body>
+</html>
